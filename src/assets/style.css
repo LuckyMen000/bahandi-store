@@ -34,10 +34,69 @@ a{
     font-size: 16px;
     text-decoration: none;
     cursor: pointer;
+    color: #FFFFFF;
 }
 .link-button{
     background-color: #E35A1B;
     padding: 12px 12px 12px 12px;
     border-radius: 13px;
     color: #FFFFFF;
+}
+
+
+/*Footer*/
+.footer{
+    background-color: #555555;
+    padding: 90px 95px;
+}
+
+.footer-container{
+    display: flex;
+    align-items: flex-start;
+    gap: 220px;
+}
+
+.footer-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-top: 45px;
+}
+
+.footer-logo{
+    font-family: 'Jockey One', sans-serif;
+    font-size: 56px;
+    font-weight: 400;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.footer-copy{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+.footer-right{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-title{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 18px;
+}
+
+.footer-right a{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #FFFFFF;
+    text-decoration: none;
+    margin-bottom: 10px;
 }

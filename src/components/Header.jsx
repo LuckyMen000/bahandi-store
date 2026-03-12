@@ -5,13 +5,13 @@ function Header(){
         <div className="header">
             <div className="logo">BAHANDI</div>
             <div className="links">
-                <a className="link">Бургеры</a>
-                <a className="link">Напитки</a>
-                <a className="link">Комбо</a>
-                <a className="link-button">Корзина</a>
+                <a href="#" className="link">Бургеры</a>
+                <a href="#" className="link">Напитки</a>
+                <a href="#"  className="link">Комбо</a>
+                <a href="#" className="link-button">Корзина</a>
             </div>
         </div>
     )
 }
 
-export default Header
+export default Header;
