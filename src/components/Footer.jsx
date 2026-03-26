@@ -15,11 +15,11 @@ function Footer(){
         <div class="footer-right">
             <div class="footer-title">Компания</div>
 
-            <a href="#">Франшиза</a>
-            <a href="#">Вакансии</a>
-            <a href="#">Оферта</a>
-            <a href="#">Политика конфиденциальности</a>
-            <a href="#">Карта сайта</a>
+            <a href="/">Франшиза</a>
+            <a href="/">Вакансии</a>
+            <a href="/">Оферта</a>
+            <a href="/">Политика конфиденциальности</a>
+            <a href="/">Карта сайта</a>
         </div>
 
     </div>
