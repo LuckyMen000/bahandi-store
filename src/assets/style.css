@@ -916,3 +916,40 @@ a{
 .order-back-btn:hover {
   background: #c24c16;
 }
+
+.product-comments {
+  margin-top: 30px;
+  width: 100%;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.comment-input {
+  width: 100%;
+  min-height: 100px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  resize: vertical;
+  font-size: 16px;
+  outline: none;
+}
+
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.comment-item {
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #f5f5f5;
+  border: 1px solid #e5e5e5;
+}

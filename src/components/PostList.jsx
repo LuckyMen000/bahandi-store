@@ -5,9 +5,10 @@ import { Link, useSearchParams } from "react-router-dom";
 
 function PostList() {
   const [products, setProducts] = useState([]);
+  const [comments, setComments] = useState([]);
   const [searchParams] = useSearchParams();
 
-  const category = searchParams.get("category");
+  const category = searchParams.get("category")?.trim();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -21,28 +22,55 @@ function PostList() {
         const response = await axios.get(url);
         setProducts(response.data);
       } catch (error) {
-        console.log("Ошибка при получении данных:", error);
+        console.log("Ошибка загрузки товаров:", error);
+      }
+    };
+
+    const fetchComments = async () => {
+      try {
+        const response = await axios.get(
+          "https://4bd84f8eea8b152e.mokky.dev/comments"
+        );
+
+        // убираем пустые комментарии
+        const cleanComments = response.data.filter(
+          (comment) =>
+            comment.text &&
+            comment.text.trim() !== ""
+        );
+
+        setComments(cleanComments);
+      } catch (error) {
+        console.log("Ошибка загрузки комментариев:", error);
       }
     };
 
     fetchProducts();
+    fetchComments();
   }, [category]);
 
   return (
     <div className="cards-container">
-      {products.map((item) => (
-        <Link
-          key={item.id}
-          to={`/product/${item.id}`}
-          state={{ product: item }}
-        >
-          <Card
-            price={item.price}
-            title={item.title}
-            image={item.image}
-          />
-        </Link>
-      ))}
+      {products.map((item) => {
+        const productComments = comments.filter(
+          (comment) => comment.productId === item.id
+        );
+
+        return (
+          <Link
+            key={item.id}
+            to={`/product/${item.id}`}
+            state={{ product: item }}
+          >
+            <Card
+              title={item.title}
+              price={item.price}
+              image={item.image}
+              commentsCount={productComments.length}
+            />
+          </Link>
+        );
+      })}
     </div>
   );
 }
